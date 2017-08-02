@@ -1,0 +1,95 @@
+    <!DOCTYPE HTML>
+    <html>
+        <head>
+            <title>M.E.N.A.C.E</title>
+            <link rel = 'stylesheet' type = 'text/css' href = 'styles/ui.css'>
+        </head>
+        <body onload="dataRead();">
+             <h1>M.E.N.A.C.E</h1>
+            <h2>M.E.N.A.C.E's Board</h2>
+            <h3>Your Board</h3>
+            <!-- <div class='counter' id="counter">Game Counter:</div>
+                <div class='thinking' id="thinking"></div>
+            <ul class="topnav" id="myTopnav">
+                <li><a class="active" href="index.html">Game</a></li>
+                <li><a href="blog.html">Dev Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="icon">
+                <a href="javascript:void(0);" onclick="swapPage()">">&#9776;</a>
+                </li>
+            </ul>-->
+            <div class = 'main-container'>
+                <div class = 'intro'>Instructions:<br><p1>Welcome to my Machine learning tool, below are some tips on how to use the page, enjoy!</p1>
+                <p2>
+                <ol>
+                <li>You can select what your opponant will be by selecting one of the options below</li><br>
+                <li>Once you've selected your opponant you can learn more about them here</li><br>
+                <li>Hit the start button to play a game</li>
+                </ol>
+                </p2>
+                </div>
+                <div class = 'menaceinfo'><br><br> M.E.N.A.C.E Follows this series of steps: <br>1. The Human player finds the matchbox showing what the grid looks like at the current time, take a random coin out of the box that represents a place on the board and places its O or X <br> 2. The Human player takes their move <br> 3. Repeat steps 1 and 2 until the game is finished <br> 4. Then each move taken by menace during that game is either rewarded or punished by adding more coins if it has won or drawn using those moves, or punished by removing a coin if it has lost</div> 
+                <div class = 'perfectinfo'>This perfect player is UNBEATABLE!! it uses an algorithm known as Minimax were the computer will look at each possible move it can make aswell as all the moves you can take then makes its move. It can see into the future of the game just to beat you!!!</div> 
+                <div class = 'humaninfo'>M.E.N.A.C.E was originally designed in the early 1960's by British scientist Donald Michie, he was also very famous for breaking the Tunny code which was used by the Germans during world war two.<br><br> M.E.N.A.C.E was made so that a human could play noughts and crosses against a machine that slowly learnt how to play over a number of games.<br><br> M.E.N.A.C.E Follows this series of steps: <br>1. The Human player finds the matchbox showing what the grid looks like at the current time, take a random coin out of the box that represents a place on the board and places its O or X <br> 2. The Human player takes their move <br> 3. Repeat steps 1 and 2 until the game is finished <br> 4. Then each move taken by menace during that game is either rewarded or punished by adding more coins if it has won or drawn using those moves, or punished by removing a coin if it has lost</div> 
+                <div class = 'board'>
+                    <!-- data-indx following cell divs represents cell index in 1D array representation -->
+                    <div class='cell' data-indx = "0" ></div>
+                    <div class='cell' data-indx = "1" ></div>
+                    <div class='cell' data-indx = "2" ></div>
+                    <div class='cell' data-indx = "3" ></div>
+                    <div class='cell' data-indx = "4" ></div>
+                    <div class='cell' data-indx = "5" ></div>
+                    <div class='cell' data-indx = "6" ></div>
+                    <div class='cell' data-indx = "7" ></div>
+                    <div class='cell' data-indx = "8" ></div>
+                </div>
+                <div class='menace-skull'id="menace-skull"></div>
+                <div class='training'>This may take some time <br><br> Training in progress..</div>
+                 <div class = 'board2'>
+                    <div class='bead' data-indx = "0" ></div>
+                    <div class='bead' data-indx = "1" ></div>
+                    <div class='bead' data-indx = "2" ></div>
+                    <div class='bead' data-indx = "3" ></div>
+                    <div class='bead' data-indx = "4" ></div>
+                    <div class='bead' data-indx = "5" ></div>
+                    <div class='bead' data-indx = "6" ></div>
+                    <div class='bead' data-indx = "7" ></div>
+                    <div class='bead' data-indx = "8" ></div>
+                
+                </div>
+            </div>
+            <div class = 'control-container'>
+                <div class ='restartPopUp'><div class = 'popUpText'>This button plays another game</div></div>
+                <div class = 'control'>
+                    <!-- div.intial displays the starting controls -->
+                    <div class = 'intial'>
+                        <div class = 'difficulty'>
+                           <!--  <span class = 'level not-selected' id = "blind">Blind</span> -->
+                       
+                        <span class = 'level1 not-selected' id = "master" onclick="displayPerfectInfo()" >Perfect</span>  
+                        <span class = 'level1 not-selected' id = "menace" onclick="displayMenaceInfo()" >M.E.N.A.C.E</span>
+                        <!--<span class = 'level1 not-selected' id = "human2" onclick="displayHumanInfo()" >Human</span>-->
+                        </div>
+
+                        <div class='start'> Start </div>
+  
+                    </div>
+
+                    <!-- div.ingame displays in-game messages and controls -->
+                    <div class = 'ingame' id="human">It's your turn ...</div>
+                    <div class = 'ingame' id="ai">
+                        <p>Wait..</p>
+                    </div>
+                    <div class = 'ingame' id="won">You won !<div class='restart'> Again! </div><div class='return'> Exit </div><div class='fastforward'> Train </div></div>
+                    <div class = 'ingame' id="lost">You lost !<div class='restart'> Again! </div><div class='return'> Exit </div><div class='fastforward'> Train </div></div>
+                    <div class = 'ingame' id="drawingstate">It's a Draw !<div class='restart'> Again! </div><div class='return'> Exit </div><div class='fastforward'> Train </div></div>
+                </div>
+            </div>
+            <script src = "scripts/jquery-3.1.1.js"></script>
+            <script src = "scripts/ui.js"></script>
+            <script src = "scripts/game.js"></script>
+            <script src = "scripts/ai.js"></script>
+            <script src = "scripts/control.js"></script>
+            <script src = "scripts/pageScripts.js"></script>
+        </body>
+    </html>
